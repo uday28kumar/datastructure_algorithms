@@ -25,6 +25,8 @@ void convertToMirror(Node *root){
     if(root == nullptr){
         return;
     }
+    convertToMirror(root->left);
+    convertToMirror(root->right);
     Node *temp = root->left;
     root->left = root->right;
     root->right = temp;
